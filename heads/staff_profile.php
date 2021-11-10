@@ -142,7 +142,7 @@ if(isset($_POST['new_update']))
 											<a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Leave Records</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">Settings</a>
+											<a class="nav-link" data-toggle="tab" href="#performance" role="tab">Performance Records</a>
 										</li>
 									</ul>
 									<div class="tab-content">
@@ -155,14 +155,17 @@ if(isset($_POST['new_update']))
 					
 												</div>
 												<div class="row">
-												<table class="data-table table stripe hover nowrap">
+													<div class="col-lg-12">
+
+													
+								<table class="data-table table stripe hover nowrap">
 						<thead>
 							<tr>
-								<th>LEAVE TYPE</th>
+								<th class="datatable-nosort">LEAVE TYPE</th>
 								<th>APPLIED DATE</th>
 								<th>FROM DATE</th>
 								<th>END DATE</th>
-								<th class="datatable-nosort">ACTION</th>
+								<th>ACTION</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -180,18 +183,10 @@ if(isset($_POST['new_update']))
 	                            <td><?php echo $row['PostingDate']; ?></td>
 								<td><?php echo $row['FromDate']; ?></td>
 								<td><?php echo $row['ToDate']; ?></td>
-								<td>											<a class="dropdown-item" href="leave_details.php?leaveid=<?php echo $row['lid']; ?>"><i class="dw dw-eye"></i> View</a>
+								<td><a class="dropdown-item" href="leave_details.php?leaveid=<?php echo $row['lid']; ?>"><i class="dw dw-eye"></i> View</a>
 									</td>
 								
-								<td>
-									<div class="dropdown">
-										<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-											<i class="dw dw-more"></i>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-										</div>
-									</div>
-								</td>
+							
 							</tr>
 							<?php }?>
 						</tbody>
@@ -199,107 +194,55 @@ if(isset($_POST['new_update']))
 												</div>
 											</div>
 										</div>
+									</div>
 										<!-- Timeline Tab End -->
 										<!-- Setting Tab start -->
-										<div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
-											<div class="profile-setting">
-												<form method="POST" enctype="multipart/form-data">
-													<div class="profile-edit-list row">
-														<div class="col-md-12"><h4 class="text-blue h5 mb-20">Edit Your Personal Setting</h4></div>
+										<div class="tab-pane fade show active" id="performance" role="tabpanel">
+											<div class="pd-20">
+											<div class="col-lg-12 col-md-6 mb-20">
+													
+												<div id="performance-chart"></div>
+					
+												</div>
+												<div class="row">
+													<div class="col-lg-12">
 
-														<?php
-														$query = mysqli_query($conn,"select * from tblemployees where emp_id = '$session_id' ")or die(mysqli_error());
-														$row = mysqli_fetch_array($query);
-														?>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>First Name</label>
-																<input name="fname" class="form-control form-control-lg" type="text" required="true" autocomplete="off" value="<?php echo $row['FirstName']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Last Name</label>
-																<input name="lastname" class="form-control form-control-lg" type="text" placeholder="" required="true" autocomplete="off" value="<?php echo $row['LastName']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Email Address</label>
-																<input name="email" class="form-control form-control-lg" type="text" placeholder="" required="true" autocomplete="off" value="<?php echo $row['EmailId']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Phone Number</label>
-																<input name="phonenumber" class="form-control form-control-lg" type="text" placeholder="" required="true" autocomplete="off" value="<?php echo $row['Phonenumber']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Date Of Birth</label>
-																<input name="dob" class="form-control form-control-lg date-picker" type="text" placeholder="" required="true" autocomplete="off" value="<?php echo $row['Dob']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Gender</label>
-																<select name="gender" class="custom-select form-control" required="true" autocomplete="off">
-																<option value="<?php echo $row['Gender']; ?>"><?php echo $row['Gender']; ?></option>
-																	<option value="male">Male</option>
-																	<option value="female">Female</option>
-																</select>
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															
-															<div class="form-group">
-																<label>Address</label>
-																<input name="address" class="form-control form-control-lg" type="text" placeholder="" required="true" autocomplete="off" value="<?php echo $row['Address']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label>Department</label>
-																<select name="department" class="custom-select form-control" required="true" autocomplete="off">
-																	<?php
-																		$query_staff = mysqli_query($conn,"select * from tblemployees join  tbldepartments where emp_id = '$session_id'")or die(mysqli_error());
-																		$row_staff = mysqli_fetch_array($query_staff);
-																		
-																	 ?>
-																	<option value="<?php echo $row_staff['DepartmentShortName']; ?>"><?php echo $row_staff['DepartmentName']; ?></option>
-																		<?php
-																		$query = mysqli_query($conn,"select * from tbldepartments");
-																		while($row = mysqli_fetch_array($query)){
-																		
-																		?>
-																		<option value="<?php echo $row['DepartmentShortName']; ?>"><?php echo $row['DepartmentName']; ?></option>
-																		<?php } ?>
-																</select>
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<?php
-																$query = mysqli_query($conn,"select * from tblemployees where emp_id = '$session_id' ")or die(mysqli_error());
-																$row = mysqli_fetch_array($query);
-															?>
-															<div class="form-group">
-																<label>Available Leave Days</label>
-																<input class="form-control form-control-lg" type="text" required="true" autocomplete="off" readonly value="<?php echo $row['Av_leave']; ?>">
-															</div>
-														</div>
-														<div class="weight-500 col-md-6">
-															<div class="form-group">
-																<label></label>
-																<div class="modal-footer justify-content-center">
-																	<button class="btn btn-primary" name="new_update" id="new_update" data-toggle="modal">Save & &nbsp;Update</button>
-																</div>
-															</div>
-														</div>
-													</div>
-												</form>
+													
+								<table class="data-table table stripe hover nowrap">
+						<thead>
+							<tr>
+								<th class="datatable-nosort">TITLE</th>
+								<th>DESCRIPTION</th>
+								<th>SCORE</th>
+								<th>DATE</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<?php 
+								$sql = "SELECT tblperformance.pid as xid,tblemployees.emp_id,tblperformance.title,tblperformance.description,tblperformance.score,tblperformance.date from tblperformance join tblemployees on tblperformance.employee_id=tblemployees.emp_id where tblemployees.emp_id = '$empid' and tblemployees.Department = '$session_depart' order by xid desc limit 10";
+									$query = mysqli_query($conn, $sql) or die(mysqli_error());
+									while ($row = mysqli_fetch_array($query)) {
+
+								 ?>  
+
+								
+								<td><?php echo $row['title']; ?></td>
+	                            <td><?php echo $row['description']; ?></td>
+								<td><?php echo $row['score']; ?></td>
+								<td><?php echo $row['date']; ?></td>
+								
+							
+							</tr>
+							<?php }?>
+						</tbody>
+					</table>
+												</div>
 											</div>
 										</div>
+									</div>
 										<!-- Setting Tab End -->
 									</div>
 								</div>

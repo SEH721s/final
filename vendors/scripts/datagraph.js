@@ -192,6 +192,35 @@ var options6 = {
     labels: ['Medical Leave', 'Casual Leave'],
 };
 
+var options7 = {
+    series: [70, 70, 50],
+    chart: {
+        height: 200,
+        type: 'donut',
+    },
+    colors: ['#003049', '#d62828', '#f77f00', '#fcbf49', '#e76f51'],
+    plotOptions: {
+        radialBar: {
+            dataLabels: {
+                name: {
+                    fontSize: '22px',
+                },
+                value: {
+                    fontSize: '16px',
+                },
+                total: {
+                    show: true,
+                    label: 'Total',
+                    formatter: function(w) {
+                        return 260
+                    }
+                }
+            }
+        }
+    },
+    labels: ['Behavioral Competencies', 'Key Performance Areas', 'Psychometrics'],
+};
+
 var chart = new ApexCharts(document.querySelector("#activities-chart"), options);
 chart.render();
 
@@ -206,6 +235,9 @@ chart4.render();
 
 var leaveChart = new ApexCharts(document.querySelector("#leave-chart"), options6);
 leaveChart.render();
+
+var performanceChart = new ApexCharts(document.querySelector("#performance-chart"), options7);
+performanceChart.render();
 // datatable init
 $('document').ready(function() {
     $('.data-table').DataTable({
