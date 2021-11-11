@@ -197,7 +197,7 @@ if(isset($_POST['new_update']))
 									</div>
 										<!-- Timeline Tab End -->
 										<!-- Setting Tab start -->
-										<div class="tab-pane fade show active" id="performance" role="tabpanel">
+										<div class="tab-pane fade" id="performance" role="tabpanel">
 											<div class="pd-20">
 											<div class="col-lg-12 col-md-6 mb-20">
 													

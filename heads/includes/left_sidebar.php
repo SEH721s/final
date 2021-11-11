@@ -32,8 +32,7 @@
 							<li><a href="leaves.php">Staff On Leave</a></li>
 							<li><a href="events.php">Birthdays & Work Anniversaries</a></li>
 							<li><a href="contracts.php">Contracts</a></li>
-							<li><a href="psychometrics.php">Psychometrics</a></li>
-							<li><a href="performance.php">Performance Records</a><li>
+							
 
 
 
