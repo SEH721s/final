@@ -40,7 +40,7 @@
 						<h4 class="font-20 weight-500 mb-10 text-capitalize">
 							Welcome back <div class="weight-600 font-30 text-blue"><?php echo $row['FirstName']. " " .$row['LastName']; ?>,</div>
 						</h4>
-						<p class="font-18 max-width-600">To the HOD Dashboard</p>
+						<p class="font-18 max-width-600">To the HR Manager Dashboard</p>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 						<div class="user-list">
 							<ul>
 								<?php
-								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' and Department = '$session_depart' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 								  while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
 		                             ?>
@@ -96,7 +96,7 @@
 						<div class="user-list">
 							<ul>
 								<?php
-								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' and Department = '$session_depart' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 		                         while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
 		                             ?>
@@ -131,7 +131,7 @@
 						<div class="user-list">
 							<ul>
 								<?php
-		                         $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' and Department = '$session_depart' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+		                         $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff'  ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 		                         while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
 		                             ?>
@@ -177,7 +177,7 @@
 						<tbody>
 							<tr>
 
-								<?php $sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblleaves.LeaveType,tblemployees.emp_id,tblleaves.FromDate,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.emp_id where tblemployees.role = 'Staff' and Department = '$session_depart' order by lid desc limit 5";
+								<?php $sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblleaves.LeaveType,tblemployees.emp_id,tblleaves.FromDate,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.emp_id where tblemployees.role = 'Staff' order by lid desc limit 5";
 									$query = $dbh -> prepare($sql);
 									$query->execute();
 									$results=$query->fetchAll(PDO::FETCH_OBJ);

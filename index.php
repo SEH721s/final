@@ -2,7 +2,6 @@
 session_start();
 include('includes/config.php');
 
-include('includes/encode.php');
 if(isset($_POST['signin']))
 {
 	$username=$_POST['username'];
@@ -14,21 +13,18 @@ if(isset($_POST['signin']))
 	if($count > 0)
 	{
 		while ($row = mysqli_fetch_assoc($query)) {
-		    if ($row['role'] == 'Admin') {
+		    if ($row['role'] == 'HRM') {
 		    	$_SESSION['alogin']=$row['emp_id'];
 		    	$_SESSION['arole']=$row['Department'];
-			 	echo "<script type='text/javascript'> document.location = 'admin/admin_dashboard.php'; </script>";
+			 	echo "<script type='text/javascript'> document.location = 'hr/index.php'; </script>";
 		    }
-		    elseif ($row['role'] == 'Staff') {
+		    elseif ($row['role'] == 'HOD') {
 		    	$_SESSION['alogin']=$row['emp_id'];
 		    	$_SESSION['arole']=$row['Department'];
-			 	echo "<script type='text/javascript'> document.location = 'staff/index.php'; </script>";
+				echo "<script type='text/javascript'> document.location = 'heads/index.php'; </script>";
+
 		    }
-		    else {
-		    	$_SESSION['alogin']=$row['emp_id'];
-		    	$_SESSION['arole']=$row['Department'];
-			 	echo "<script type='text/javascript'> document.location = 'heads/index.php'; </script>";
-		    }
+		    
 		}
 
 	} 

@@ -1,7 +1,11 @@
 var options = {
     series: [{
-            name: "Staff On Leave",
+            name: "Applied Leave",
             data: [10, 0, 12, 6, 8, 6, 4, 2, 20, 25, 22, 30]
+        },
+        {
+            name: "Staff On Leave",
+            data: [10, 0, 12, 6, 8, 6, 4, 12]
         },
 
 
