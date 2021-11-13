@@ -10,6 +10,7 @@ while($row =mysqli_fetch_assoc($result)){
     $stats[] = $row;
 
 }
-echo json_encode($stats);
-
+ $fp = fopen('genderdata.json', 'w');
+    fwrite($fp, json_encode($stats));
+    fclose($fp);
 ?>

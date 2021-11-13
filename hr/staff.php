@@ -77,7 +77,7 @@ if (isset($_GET['delete'])) {
 						<h2 class="text-blue h4">ALL EMPLOYEES</h2>
 					</div>
 				<div class="pb-20">
-					<table class="data-table table stripe hover nowrap">
+					<table class="data-table1 table stripe hover nowrap">
 						<thead>
 							<tr>
 								<th class="table-plus datatable-nosort">FULL NAME</th>
@@ -86,7 +86,7 @@ if (isset($_GET['delete'])) {
 								<th>PROBATION</th>
 								<th>PHONE NUMBER</th>
 								<th>POSITION</th>
-								<th>LEAVE DAYS</th>
+								<th>LEAVE BALANCE</th>
 								<th class="datatable-nosort">ACTION</th>
 							</tr>
 						</thead>
@@ -121,17 +121,11 @@ if (isset($_GET['delete'])) {
 	                             <span style="color: red">1st Stage</span>
 	                             <?php } ?>
 	                            </td>	                            <td><?php echo $row['Phonenumber']; ?></td>
-								<td><?php echo $row['role']; ?></td>
+								<td><?php echo $row['currentRank']; ?></td>
 								<td><?php echo $row['Av_leave']; ?></td>
 								<td>
-									<div class="dropdown">
-										<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-											<i class="dw dw-more"></i>
-										</a>
-										<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 											<a class="dropdown-item" href="staff_profile.php?emp_id=<?php echo $row['emp_id']; ?>"><i class="dw dw-eye"></i> View</a>
-										</div>
-									</div>
+										
 								</td>
 								
 							</tr>

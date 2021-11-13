@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('includes/config.php');
+include('includes/encode.php');
 
 if(isset($_POST['signin']))
 {

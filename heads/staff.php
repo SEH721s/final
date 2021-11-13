@@ -49,7 +49,14 @@ if (isset($_GET['delete'])) {
 				<div class="col-lg-4 col-md-6 mb-20">
 						
 
-				<div id="application-chart"></div>
+				<div id="application-chart">
+					
+				</div>
+				<script>
+				
+				</script>
+
+				
 					
 				</div>
 				<div class="col-lg-4 col-md-6 mb-20">
@@ -86,7 +93,7 @@ if (isset($_GET['delete'])) {
 								<th>PROBATION</th>
 								<th>PHONE NUMBER</th>
 								<th>POSITION</th>
-								<th>LEAVE DAYS</th>
+								<th>LEAVE BALANCE</th>
 								<th>ACTION</th>
 							</tr>
 						</thead>
@@ -121,7 +128,7 @@ if (isset($_GET['delete'])) {
 	                             <span style="color: red">1st Stage</span>
 	                             <?php } ?>
 	                            </td>	                            <td><?php echo $row['Phonenumber']; ?></td>
-								<td><?php echo $row['role']; ?></td>
+								<td><?php echo $row['currentRank']; ?></td>
 								<td><?php echo $row['Av_leave']; ?></td>
 								<td>
 									<div class="dropdown">

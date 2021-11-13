@@ -57,7 +57,7 @@
 						<h2 class="text-blue h4">ALL STAFF ON LEAVE</h2>
 					</div>
 				<div class="pb-20">
-					<table class="data-table table stripe hover nowrap">
+					<table class="data-table1 table stripe hover nowrap">
 						<thead>
 							<tr>
 								<th class="table-plus datatable-nosort">STAFF NAME</th>

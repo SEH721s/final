@@ -58,7 +58,7 @@
 						<div class="user-list">
 							<ul>
 								<?php
-								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+								  $query = mysqli_query($conn,"select * from tblemployees where DATEDIFF(`ContractEndDate`,CURRENT_DATE)<=90  and role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 								  while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
 		                             ?>
@@ -96,7 +96,7 @@
 						<div class="user-list">
 							<ul>
 								<?php
-								  $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+								  $query = mysqli_query($conn,"select * from tblemployees where month(current_date)=month(Dob) and day(current_date)<=day(Dob) and role = 'Staff' ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 		                         while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
 		                             ?>
@@ -109,10 +109,9 @@
 										<div class="txt">
 											<span class="badge badge-pill badge-sm" data-bgcolor="#e7ebf5" data-color="#1d2758"><?php echo $row['Department']; ?></span>
 											<div class="font-14 weight-600"><?php echo $row['FirstName'] . " " . $row['LastName']; ?></div>
-											<div class="font-12 weight-500" data-color="#b2b1b6"><?php echo $row['Dob']; ?></div>
 										</div>
 									</div>
-									<div><a title="Send Birthday Message" href="#"><i class="far fa-paper-plane"></a></i></div>
+									<div class="font-12 weight-500" data-color="#b2b1b6"><?php echo $row['Dob']; ?></div>
 								</li>
 								<?php }?>
 							</ul>
@@ -131,9 +130,13 @@
 						<div class="user-list">
 							<ul>
 								<?php
-		                         $query = mysqli_query($conn,"select * from tblemployees where role = 'Staff'  ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
+		                         $query = mysqli_query($conn,"select * from tblemployees where year(current_date)-year(RegDate)=5 or year(current_date)-year(RegDate)=10 or year(current_date)-year(RegDate)=15 and role = 'Staff'  ORDER BY tblemployees.emp_id desc limit 4") or die(mysqli_error());
 		                         while ($row = mysqli_fetch_array($query)) {
 		                         $id = $row['emp_id'];
+								  $registered = $row['RegDate'];
+								 $year = date('Y', strtotime($registered));
+								 $cur_year = date('Y');
+								 $interval = $cur_year-$year;
 		                             ?>
 
 								<li class="d-flex align-items-center justify-content-between">
@@ -144,10 +147,9 @@
 										<div class="txt">
 											<span class="badge badge-pill badge-sm" data-bgcolor="#e7ebf5" data-color=" #1d2758"><?php echo $row['Department']; ?></span>
 											<div class="font-14 weight-600"><?php echo $row['FirstName'] . " " . $row['LastName']; ?></div>
-											<div class="font-12 weight-500" data-color="#b2b1b6">2 Years</div>
 										</div>
 									</div>
-									<div><a title="Send Congratulations Message" href="#"><i class="far fa-paper-plane"></a></i></div>
+									<div class="font-12 weight-500" data-color="#b2b1b6"><?php echo $interval; ?> Years</div>
 								</li>
 								<?php }?>
 							</ul>

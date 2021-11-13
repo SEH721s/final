@@ -1,5 +1,5 @@
 $('document').ready(function() {
-    $('.data-table').DataTable({
+    $('.data-table1').DataTable({
         scrollCollapse: true,
         autoWidth: false,
         responsive: true,
@@ -21,7 +21,7 @@ $('document').ready(function() {
         },
     });
 
-    $('.data-table-export').DataTable({
+    $('.data-table-export1').DataTable({
         scrollCollapse: true,
         autoWidth: false,
         responsive: true,

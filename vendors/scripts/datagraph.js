@@ -11,72 +11,18 @@ var options = {
 
     ],
     chart: {
-        height: 300,
-        type: 'area',
-        zoom: {
-            enabled: false,
-        },
-        dropShadow: {
-            enabled: true,
-            color: '#000',
-            top: 18,
-            left: 7,
-            blur: 16,
-            opacity: 0.2
-        },
-        toolbar: {
-            show: false
-        }
+        height: 350,
+        type: 'bar',
     },
-    colors: ['#f0746c', '#255cd3'],
     dataLabels: {
-        enabled: false,
+        enabled: false
     },
-    stroke: {
-        width: [3, 3],
-        curve: 'smooth'
+    series: [],
+    title: {
+        text: 'Approved Leave',
     },
-    grid: {
-        show: false,
-    },
-    markers: {
-        colors: ['#f0746c', '#255cd3'],
-        size: 5,
-        strokeColors: '#ffffff',
-        strokeWidth: 2,
-        hover: {
-            sizeOffset: 2
-        }
-    },
-    xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        labels: {
-            style: {
-                colors: '#8c9094'
-            }
-        }
-    },
-    yaxis: {
-        min: 0,
-        max: 35,
-        labels: {
-            style: {
-                colors: '#8c9094'
-            }
-        }
-    },
-    legend: {
-        position: 'top',
-        horizontalAlign: 'right',
-        floating: true,
-        offsetY: 0,
-        labels: {
-            useSeriesColors: true
-        },
-        markers: {
-            width: 10,
-            height: 10,
-        }
+    noData: {
+        text: 'Loading...'
     }
 };
 
@@ -137,6 +83,7 @@ var options3 = {
     },
     labels: ['Full-Time', 'Part-Time'],
 };
+
 
 var options5 = {
     series: [50, 60],
@@ -222,7 +169,7 @@ var options7 = {
             }
         }
     },
-    labels: ['Behavioral Competencies', 'Key Performance Areas', 'Psychometrics'],
+    labels: ['Behavioral Competencies', 'Key Performance Areas'],
 };
 
 var chart = new ApexCharts(document.querySelector("#activities-chart"), options);
