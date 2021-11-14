@@ -102,13 +102,13 @@
     ],
     "gender": [
         {
-            "gender": "Female",
-            "amount": "22"
+            "x": "Female",
+            "y": "22"
         },
 
         {
-            "gender": "Male",
-            "amount": "30"
+            "x": "Male",
+            "y": "30"
         }
 
     ]
