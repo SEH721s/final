@@ -49,4 +49,54 @@
         }
 
     ],
-    "year2":[{"x":null,"y":"2"},{"x":"April","y":"3"},{"x":"August","y":"3"},{"x":"December","y":"9"},{"x":"February","y":"2"},{"x":"January","y":"8"},{"x":"July","y":"3"},{"x":"June","y":"3"},{"x":"March","y":"3"},{"x":"May","y":"3"},{"x":"November","y":"8"},{"x":"October","y":"5"},{"x":"September","y":"3"}],"gender":[{"gender":"Female","amount":"22"},{"gender":"Male","amount":"30"}],"employment-type":[{"type":"Full-Time","amount":"44"},{"type":"Part-Time","amount":"8"}],"citizenship":[{"citizen":"foreign","amount":"18"},{"citizen":"Namibian","amount":"34"}]}
+    "year2": [{
+            "x": "January",
+            "y": 8
+        },
+        {
+            "x": "February",
+            "y": 2
+        },
+        {
+            "x": "March",
+            "y": 3
+        },
+        {
+            "x": "April",
+            "y": 3
+        },
+        {
+            "x": "May",
+            "y": 3
+        },
+        {
+            "x": "June",
+            "y": 3
+        },
+        {
+            "x": "July",
+            "y": 3
+        },
+        {
+            "x": "August",
+            "y": 3
+        },
+        {
+            "x": "September",
+            "y": 4
+        },
+        {
+            "x": "October",
+            "y": 5
+        },
+        {
+            "x": "November",
+            "y": 8
+        },
+        {
+            "x": "December",
+            "y": 10
+        }
+
+    ],
+    ,"gender":[{"gender":"Female","amount":"22"},{"gender":"Male","amount":"30"}],"employment-type":[{"type":"Full-Time","amount":"44"},{"type":"Part-Time","amount":"8"}],"citizenship":[{"citizen":"foreign","amount":"18"},{"citizen":"Namibian","amount":"34"}]}
