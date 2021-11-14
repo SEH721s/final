@@ -50,9 +50,54 @@
 
     ],
     "year2": [{
+            "x": "January",
+            "y": 0
+        },
+        {
+            "x": "February",
+            "y": 0
+        },
+        {
+            "x": "March",
+            "y": 0
+        },
+        {
+            "x": "April",
+            "y": 0
+        },
+        {
+            "x": "May",
+            "y": 0
+        },
+        {
+            "x": "June",
+            "y": 0
+        },
+        {
+            "x": "July",
+            "y": 0
+        },
+        {
+            "x": "August",
+            "y": 0
+        },
+        {
+            "x": "September",
+            "y": 0
+        },
+        {
+            "x": "October",
+            "y": 0
+        },
+        {
             "x": "November",
-            "y": "2"
+            "y": 2
+        },
+        {
+            "x": "December",
+            "y": 0
         }
+
 
     ]
 }
