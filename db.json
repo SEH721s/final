@@ -99,4 +99,4 @@
         }
 
     ],
-    ,"gender":[{"gender":"Female","amount":"22"},{"gender":"Male","amount":"30"}],"employment-type":[{"type":"Full-Time","amount":"44"},{"type":"Part-Time","amount":"8"}],"citizenship":[{"citizen":"foreign","amount":"18"},{"citizen":"Namibian","amount":"34"}]}
+    "gender":[{"gender":"Female","amount":"22"},{"gender":"Male","amount":"30"}],"employment-type":[{"type":"Full-Time","amount":"44"},{"type":"Part-Time","amount":"8"}],"citizenship":[{"citizen":"foreign","amount":"18"},{"citizen":"Namibian","amount":"34"}]}
