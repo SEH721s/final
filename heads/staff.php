@@ -52,10 +52,7 @@ if (isset($_GET['delete'])) {
 				<div id="application-chart">
 					
 				</div>
-				<script>
-				
-				</script>
-
+		
 				
 					
 				</div>

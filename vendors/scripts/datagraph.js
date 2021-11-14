@@ -1,28 +1,78 @@
 var options = {
-    series: [{
-            name: "Applied Leave",
-            data: [10, 0, 12, 6, 8, 6, 4, 2, 20, 25, 22, 30]
-        },
-        {
-            name: "Staff On Leave",
-            data: [10, 0, 12, 6, 8, 6, 4, 12]
-        },
+    series: [
 
 
     ],
     chart: {
-        height: 350,
-        type: 'bar',
-    },
-    dataLabels: {
-        enabled: false
-    },
-    series: [],
-    title: {
-        text: 'Approved Leave',
+        height: 300,
+        type: 'area',
+        zoom: {
+            enabled: false,
+        },
+        dropShadow: {
+            enabled: true,
+            color: '#000',
+            top: 18,
+            left: 7,
+            blur: 16,
+            opacity: 0.2
+        },
+        toolbar: {
+            show: false
+        }
     },
     noData: {
-        text: 'Loading...'
+        text: "No Data to show"
+    },
+    colors: ['#f0746c', '#255cd3'],
+    dataLabels: {
+        enabled: false,
+    },
+    stroke: {
+        width: [3, 3],
+        curve: 'smooth'
+    },
+    grid: {
+        show: false,
+    },
+    markers: {
+        colors: ['#f0746c', '#255cd3'],
+        size: 5,
+        strokeColors: '#ffffff',
+        strokeWidth: 2,
+        hover: {
+            sizeOffset: 2
+        }
+    },
+    xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: {
+            style: {
+                colors: '#8c9094'
+            }
+        }
+    },
+    yaxis: {
+        min: 0,
+        max: 400,
+        labels: {
+            style: {
+                colors: '#8c9094'
+            }
+        }
+    },
+    legend: {
+        position: 'top',
+        horizontalAlign: 'right',
+        floating: true,
+        offsetY: 0,
+        labels: {
+            useSeriesColors: true
+        },
+        markers: {
+            width: 10,
+            height: 10,
+        }
     }
 };
 
@@ -83,7 +133,6 @@ var options3 = {
     },
     labels: ['Full-Time', 'Part-Time'],
 };
-
 
 var options5 = {
     series: [50, 60],
@@ -169,11 +218,30 @@ var options7 = {
             }
         }
     },
-    labels: ['Behavioral Competencies', 'Key Performance Areas'],
+    labels: ['Behavioral Competencies', 'Key Performance Areas', 'Psychometrics'],
 };
 
 var chart = new ApexCharts(document.querySelector("#activities-chart"), options);
 chart.render();
+var url = 'https://my-json-server.typicode.com/SEH721s/final/db';
+
+
+
+$.getJSON(url, function(response) {
+
+    chart.updateSeries([{
+            name: 'Staff on leave in 2020',
+            data: response.year1
+        },
+        {
+            name: 'Staff on leave in 2021',
+            data: response.year2
+        }
+
+    ])
+
+});
+
 
 var chart2 = new ApexCharts(document.querySelector("#appointment-chart"), options2);
 chart2.render();
