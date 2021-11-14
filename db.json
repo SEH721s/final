@@ -99,5 +99,16 @@
         }
 
 
+    ],
+    "gender": [{
+            "gender": "Female",
+            "amount": "22"
+        },
+
+        {
+            "gender": "Male",
+            "amount": "30"
+        }
+
     ]
 }
